@@ -1,0 +1,188 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: rgb(13, 14, 27);
+    color: #fff;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.container {
+    width: 80%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    margin: 0px auto;
+}
+
+.slider {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.slider-content {
+    display: flex;
+    width: 400%;
+}
+
+.slide-item {
+    width: 25%;
+    transition: all 0.5s;
+}
+
+.slide-item > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.slider-descr {
+    font-size: 24px;
+    flex-direction: column;
+    overflow: hidden;
+    display: flex;
+    height: 27px;
+}
+
+.descr {
+    transition: all 0.5s;
+}
+
+.slider-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0px;
+}
+
+@media (max-width: 570px) {
+    .slider-controls {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .slider-dots {
+        order: -1;
+        align-self: center;
+        margin: 10px 0px;
+    }
+}
+
+.slider-dots {
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ffd900;
+}
+
+.dot:hover {
+    background-color: #ffffff;
+}
+
+.dot:active {
+    background-color: #b40b0b;
+}
+
+input[name = "slide"] {
+    position: absolute;
+    visibility: hidden;
+}
+
+/* Смена слайдов */
+
+#i1:checked ~ .slider-content .s1 {
+    margin-left: 0;
+}
+
+#i2:checked ~ .slider-content .s1 {
+    margin-left: -25%;
+}
+
+#i3:checked ~ .slider-content .s1 {
+    margin-left: -50%;
+}
+
+#i4:checked ~ .slider-content .s1 {
+    margin-left: -75%;
+}
+
+/* Смена текста */
+
+/* При втором чекбоксе */
+
+#i2:checked ~ .slider-controls .slider-descr .order-1 {
+    order: 0;
+}
+
+#i2:checked ~ .slider-controls .slider-descr .order-2 {
+    order: -1;
+}
+
+#i2:checked ~ .slider-controls .slider-descr .order-3 {
+    order: 0;
+}
+
+#i2:checked ~ .slider-controls .slider-descr .order-4 {
+    order: 0;
+}
+
+/* При третьем чекбоксе */
+
+#i3:checked ~ .slider-controls .slider-descr .order-1 {
+    order: 0;
+}
+
+#i3:checked ~ .slider-controls .slider-descr .order-2 {
+    order: 0;
+}
+
+#i3:checked ~ .slider-controls .slider-descr .order-3 {
+    order: -1;
+}
+
+#i3:checked ~ .slider-controls .slider-descr .order-4 {
+    order: 0;
+}
+
+/* При четвертом чекбоксе */
+
+#i4:checked ~ .slider-controls .slider-descr .order-1 {
+    order: 0;
+}
+
+#i4:checked ~ .slider-controls .slider-descr .order-2 {
+    order: 0;
+}
+
+#i4:checked ~ .slider-controls .slider-descr .order-3 {
+    order: 0;
+}
+
+#i4:checked ~ .slider-controls .slider-descr .order-4 {
+    order: -1;
+}
+
+/* Активные кнопки слайдера */
+
+#i1:checked ~ .slider-controls .slider-dots .f1 {
+    background-color: rgb(32, 226, 106);
+}
+
+#i2:checked ~ .slider-controls .slider-dots .f2 {
+    background-color: rgb(32, 226, 106);
+}
+
+#i3:checked ~ .slider-controls .slider-dots .f3 {
+    background-color: rgb(32, 226, 106);
+}
+
+#i4:checked ~ .slider-controls .slider-dots .f4 {
+    background-color: rgb(32, 226, 106);
+}
