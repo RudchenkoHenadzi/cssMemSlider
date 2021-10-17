@@ -2,84 +2,20 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-}
-
-/*.container {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.slider {
-    display: flex;
-    flex-direction: column;
-    max-width: 800px;
-    overflow: hidden;
-    justify-content: space-between;
-}
-
-.slider-content {
-    width: 400%;
-    height: 300px;
-    display: flex;
-}
-
-.slider-dots {
-    margin-top: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.slider-dots > ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-.slider-dots > ul > li {
-    width: 30px;
-    height: 5px;
-    background-color: #000;
-}
-
-.slider-item {
-    width: 25%;
-    height: 100%;
-    border: 2px solid #000;
-    border-radius: 5px;
-}
-
-.slider-item > img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-#b1 {
-    cursor: pointer;
-}
-
-#b1:active ~ .slider-subtitle {
-    font-size: 90px;
-}*/
-
-.container {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background-color: rgb(13, 14, 27);
     color: #fff;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+.container {
+    width: 80%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    margin: 0px auto;
+}
+
 .slider {
-    width: 1100px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -104,12 +40,33 @@
 
 .slider-descr {
     font-size: 24px;
+    flex-direction: column;
+    overflow: hidden;
+    display: flex;
+    height: 27px;
+}
+
+.descr {
+    transition: all 0.5s;
 }
 
 .slider-controls {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
     padding: 10px 0px;
+}
+
+@media (max-width: 570px) {
+    .slider-controls {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .slider-dots {
+        order: -1;
+        align-self: center;
+        margin: 10px 0px;
+    }
 }
 
 .slider-dots {
@@ -122,11 +79,15 @@
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background-color: #79A9EF;
+    background-color: #ffd900;
 }
 
 .dot:hover {
-    background-color: #365788;
+    background-color: #ffffff;
+}
+
+.dot:active {
+    background-color: #b40b0b;
 }
 
 input[name = "slide"] {
@@ -134,38 +95,94 @@ input[name = "slide"] {
     visibility: hidden;
 }
 
-#i1:checked ~ .s1 {
+/* Смена слайдов */
+
+#i1:checked ~ .slider-content .s1 {
     margin-left: 0;
 }
 
-#i2:checked ~ .s1 {
+#i2:checked ~ .slider-content .s1 {
     margin-left: -25%;
 }
 
-#i3:checked ~ .s1 {
+#i3:checked ~ .slider-content .s1 {
     margin-left: -50%;
 }
 
-#i4:checked ~ .s1 {
+#i4:checked ~ .slider-content .s1 {
     margin-left: -75%;
 }
 
-#i1:checked ~ .active {
-    background-color: transparent;
-    border: 1px solid #79A9EF;
+/* Смена текста */
+
+/* При втором чекбоксе */
+
+#i2:checked ~ .slider-controls .slider-descr .order-1 {
+    order: 0;
 }
 
-#i2:checked ~ .active {
-    background-color: transparent;
-    border: 1px solid #79A9EF;
+#i2:checked ~ .slider-controls .slider-descr .order-2 {
+    order: -1;
 }
 
-#i3:checked ~ .active {
-    background-color: transparent;
-    border: 1px solid #79A9EF;
+#i2:checked ~ .slider-controls .slider-descr .order-3 {
+    order: 0;
 }
 
-#i4:checked ~ .active {
-    background-color: transparent;
-    border: 1px solid #79A9EF;
+#i2:checked ~ .slider-controls .slider-descr .order-4 {
+    order: 0;
+}
+
+/* При третьем чекбоксе */
+
+#i3:checked ~ .slider-controls .slider-descr .order-1 {
+    order: 0;
+}
+
+#i3:checked ~ .slider-controls .slider-descr .order-2 {
+    order: 0;
+}
+
+#i3:checked ~ .slider-controls .slider-descr .order-3 {
+    order: -1;
+}
+
+#i3:checked ~ .slider-controls .slider-descr .order-4 {
+    order: 0;
+}
+
+/* При четвертом чекбоксе */
+
+#i4:checked ~ .slider-controls .slider-descr .order-1 {
+    order: 0;
+}
+
+#i4:checked ~ .slider-controls .slider-descr .order-2 {
+    order: 0;
+}
+
+#i4:checked ~ .slider-controls .slider-descr .order-3 {
+    order: 0;
+}
+
+#i4:checked ~ .slider-controls .slider-descr .order-4 {
+    order: -1;
+}
+
+/* Активные кнопки слайдера */
+
+#i1:checked ~ .slider-controls .slider-dots .f1 {
+    background-color: rgb(32, 226, 106);
+}
+
+#i2:checked ~ .slider-controls .slider-dots .f2 {
+    background-color: rgb(32, 226, 106);
+}
+
+#i3:checked ~ .slider-controls .slider-dots .f3 {
+    background-color: rgb(32, 226, 106);
+}
+
+#i4:checked ~ .slider-controls .slider-dots .f4 {
+    background-color: rgb(32, 226, 106);
 }

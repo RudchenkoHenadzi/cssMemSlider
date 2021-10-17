@@ -8,69 +8,38 @@
     <title>cssMemSlider</title>
 </head>
 <body>
-    <!--<div class="container">
-        <div class="slider">
-            <div class="slider-content">
-                <div class="slider-item s1" id="r1"><img src="img/mems-1.jpg" alt=""></div>
-                <div class="slider-item" id="r2"><img src="img/mems-2.jpg" alt=""></div>
-                <div class="slider-item" id="r3"><img src="img/mems-1.jpg" alt=""></div>
-                <div class="slider-item" id="r4"><img src="img/mems-2.jpg" alt=""></div>
-            </div>
-            <div class="slider-dots">
-                
-                <div class="slider-subtitle">I`m best of the best</div>
-
-                <ul>
-                    <li id="b1"></li>
-                    <li id="b2"></li>
-                    <li id="b3"></li>
-                    <li id="b4"></li>
-                </ul>
-
-            </div>
-            
-        </div>
-    </div>-->
 
     <div class="container">
         <div class="slider">
+            
+            <input type="radio" name="slide" id='i1' checked>
+            <input type="radio" name="slide" id='i2'>
+            <input type="radio" name="slide" id='i3'>
+            <input type="radio" name="slide" id='i4'>
 
             <div class="slider-content">
-                <input type="radio" name="slide" id='i1' checked>
-                <input type="radio" name="slide" id='i2'>
-                <input type="radio" name="slide" id='i3'>
-                <input type="radio" name="slide" id='i4'>
-    
-                <div class="slide-item s1">
-                    <img src="img/mems-1.jpg" alt="First mems">
-                    <div class="slider-descr">Подпись для первого слайда</div>
-                </div>
-                <div class="slide-item">
-                    <img src="img/mems-2.jpg" alt="Second mems">
-                    <div class="slider-descr">Подпись для второго слайда</div>
-                </div>
-                <div class="slide-item">
-                    <img src="img/mems-3.jpg" alt="Penultimate mems">
-                    <div class="slider-descr">Подпись для третьего слайда</div>
-                </div>
-                <div class="slide-item">
-                    <img src="img/mems-4.jpg" alt="Last mems">
-                    <div class="slider-descr">Подпись для четвертого слайда</div>
-                </div>
+                <div class="slide-item s1"><img src="img/mems-1.jpg" alt="First mems"></div>
+                <div class="slide-item"><img src="img/mems-2.jpg" alt="Second mems"></div>
+                <div class="slide-item"><img src="img/mems-3.jpg" alt="Penultimate mems"></div>
+                <div class="slide-item"><img src="img/mems-4.jpg" alt="Last mems"></div>
             </div>
             
             <div class="slider-controls">
-                
+                <div class="slider-descr">
+                    <p class="descr order-1">Подпись для первого слайда</p>
+                    <p class="descr order-2">Подпись для второго слайда</p>
+                    <p class="descr order-3">Подпись для третьего слайда</p>
+                    <p class="descr order-4">Подпись для четвертого слайда</p>
+                </div>
                 <div class="slider-dots">
-                    <label for="i1" class="dot active"></label>
-                    <label for="i2" class="dot"></label>
-                    <label for="i3" class="dot"></label>
-                    <label for="i4" class="dot"></label>
+                    <label for="i1" class="dot f1"></label>
+                    <label for="i2" class="dot f2"></label>
+                    <label for="i3" class="dot f3"></label>
+                    <label for="i4" class="dot f4"></label>
                 </div>
             </div>
         </div>
 
-        
     </div>
 </body>
 </html>
